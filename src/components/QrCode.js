@@ -13,7 +13,7 @@ export default function QrCode() {
   //Alterar o URL apenas quando o usuário
   //Muda a entrada
   useEffect(() => {
-    setQrCode(`http://api.qrserver.v{com/v1/create-qr-code/?data=${word}!&size=${size}x${size}&bgcolor=${bgColor}`);
+    setQrCode(`http://api.qrserver.com/v1/create-qr-code/?data=${word}!&size=${size}x${size}&bgcolor=${bgColor}`);
   }, [word, size, bgColor]);
 
   //Atualizando a palavra de entrada quando o usuário
@@ -38,10 +38,15 @@ export default function QrCode() {
         </div>
 
         <div className="extra">
-          <h5>Backgorund Color:</h5>
+          <h5>Background Color:</h5>
           <input type="color" onChange={(e) => 
-           { setSize(e.target.value.substring(1)) }} />
-        </div>    
+            { setBgColor(e.target.value.substring(1)) }}/>
+
+          <h5>Dimension:</h5>
+          <input type="range" min="200" max="600"
+            value={size} onChange={(e) => 
+            { setSize(e.target.value) }}/>
+        </div>   
       </div>
       <div className="output-box">
         <img src={ qrCode } alt="" />
