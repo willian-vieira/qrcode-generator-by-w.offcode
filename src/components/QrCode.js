@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../styles/App.css';
+import '../styles/QrCode.css';
 
 export default function QrCode() {
 
