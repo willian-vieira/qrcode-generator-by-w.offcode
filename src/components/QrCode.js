@@ -21,16 +21,14 @@ export default function QrCode() {
   function hadleClick() {
     setWord(temp);
   }
-
+  
   return (
     <div className="qrCode">
       <h1>QrCode Generador</h1>
 
       <div className="input-box">
         <div className="gen">
-          <input type="text" onChange={
-           (e) => {setTemp(e.target.value)}}
-           placeholder="Enter text to code" />
+          <input type="text" onChange={(e) => {setTemp(e.target.value)}} placeholder="Enter text to code" />
 
           <button className="button" onClick={ hadleClick }>
             Generate
@@ -39,20 +37,19 @@ export default function QrCode() {
 
         <div className="extra">
           <h5>Background Color:</h5>
-          <input type="color" onChange={(e) => 
-            { setBgColor(e.target.value.substring(1)) }}/>
+          <input type="color" onChange={(e) => { setBgColor(e.target.value.substring(1)) }} />
 
           <h5>Dimension:</h5>
-          <input type="range" min="200" max="600"
-            value={size} onChange={(e) => 
-            { setSize(e.target.value) }}/>
+          <input type="range" min="200" max="600" value={size} onChange={(e) => { setSize(e.target.value) }}/>
         </div>   
       </div>
       <div className="output-box">
         <img src={ qrCode } alt="" />
 
         <a href={ qrCode } download="QrCode">
-          <button type="button">Download</button>
+          <button type="button">
+            Download
+          </button>
         </a>
       </div>
     </div>

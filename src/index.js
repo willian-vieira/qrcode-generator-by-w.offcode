@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/QrCode';
+import QrCode from './components/QrCode';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <QrCode />
   </React.StrictMode>,
   document.getElementById('root')
 );
