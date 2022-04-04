@@ -13,7 +13,7 @@ export default function QrCode() {
   //Alterar o URL apenas quando o usuário
   //Muda a entrada
   useEffect(() => {
-    setQrCode(`http://api.qrserver.com/v1/create-qr-code/?data=${word}!&size=${size}x${size}&bgcolor=${bgColor}`);
+    setQrCode(`http://api.qrserver.com/v1/create-qr-code/?data=${word}&size=${size}x${size}&bgcolor=${bgColor}`);
   }, [word, size, bgColor]);
 
   //Atualizando a palavra de entrada quando o usuário
